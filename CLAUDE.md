@@ -52,3 +52,13 @@ git push -f origin develop   # rebase 后需要 force；develop 是我们独占�
 - ❌ 向 `upstream` 推送（已被 DISABLE 拦截）
 - ❌ force push `main`
 - ❌ 移除仓库级代理配置
+
+## Fork 本地修改清单（rebase 时这些差异是故意的，不要回退）
+
+1. `apps/dsh-desktop/src/electron-app.mjs`（DesktopUpdateController 构造处）：
+   `enabled: false` —— 禁用自动更新。上游更新 feed 指向 ningbainb 仓库，
+   启用会导致打包版"更新"时被上游原版覆盖。恢复方法见该处注释。
+2. 遥测保持仓库默认关闭状态（`apps/dsh-desktop/build/telemetry-config.json`
+   为 `{"endpoint":"","officialBuild":false}`），不要模仿上游 release workflow
+   注入 `DSH_TELEMETRY_ENDPOINT`。
+

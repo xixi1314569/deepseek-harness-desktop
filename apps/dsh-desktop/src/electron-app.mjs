@@ -3019,7 +3019,11 @@ export async function startElectronApp(metadata) {
     updater: autoUpdater,
     getWindow: () => mainWindow,
     currentVersion: app.getVersion(),
-    enabled: Boolean(autoUpdater),
+    // [fork] 二开版本禁用自动更新：更新 feed 指向上游 ningbainb 仓库，
+    // 若保持启用，用户"更新"会把定制版覆盖为上游原版。
+    // 恢复方法：改回 Boolean(autoUpdater)，并把 electron-builder.yml 的
+    // publish 与 src/distribution-identity.mjs 的 updateProvider 一并指向自己的仓库。
+    enabled: false,
     unavailableReason: updateAvailability.reason === UNSIGNED_MAC_PREVIEW_REASON
       ? UNSIGNED_MAC_PREVIEW_REASON
       : undefined,
