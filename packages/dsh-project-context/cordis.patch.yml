@@ -1,0 +1,7 @@
+# bundle patch for the dsh-project-context plugin: inserts its plugin row into the web
+# profile roster. Applied as a profile bundle layer (the `dsh.bundle.patch`
+# manifest field); install with
+# `dsh plugin --profile web add link:<repo>/packages/dsh-project-context`.
+- insert:
+    - id: project-context
+      name: '@xixi1314569/dsh-project-context'

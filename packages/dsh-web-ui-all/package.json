@@ -51,6 +51,7 @@
     "@linxin666/dsh-client-ui-model-preferences": "workspace:*",
     "@ningbainb/dsh-personal-prompt": "workspace:*",
     "@ningbainb/dsh-memory": "workspace:*",
+    "@xixi1314569/dsh-project-context": "workspace:*",
     "@linxin666/dsh-skins": "workspace:*",
     "@linxin666/dsh-client-ui-skin-center": "workspace:*"
   },

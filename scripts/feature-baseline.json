@@ -273,6 +273,19 @@
       "requiredInAggregate": true,
       "requiredInCordisPatch": true,
       "requiredInDesktop": false
+    },
+    {
+      "id": "project-context",
+      "package": "@xixi1314569/dsh-project-context",
+      "path": "packages/dsh-project-context",
+      "description": "项目上下文自动装载（二开新增插件，V1.2 需求模块一）",
+      "features": [
+        "phase-0-system-prompt-announcement"
+      ],
+      "patchId": "project-context",
+      "requiredInAggregate": true,
+      "requiredInCordisPatch": true,
+      "requiredInDesktop": false
     }
   ],
   "desktopBuiltins": [

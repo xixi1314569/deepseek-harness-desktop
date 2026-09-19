@@ -94,6 +94,11 @@
     - id: liangshen
       name: '@linxin666/dsh-liangshen'
 
+# from ../dsh-project-context
+- insert:
+    - id: project-context
+      name: '@xixi1314569/dsh-project-context'
+
 # from ../skins/skin-center (via ../dsh-skins)
 - insert:
     - id: ui-skin-center

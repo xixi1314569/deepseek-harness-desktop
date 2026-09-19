@@ -85,6 +85,8 @@ export const AGGREGATED_BUNDLES = Object.freeze([
   '@linxin666/dsh-tool-describe-image',
   '@ningbainb/dsh-chat-artifacts',
   '@ningbainb/dsh-user-scope',
+  // [fork] 二开新增插件：Project Context（V1.2 需求模块一）
+  '@xixi1314569/dsh-project-context',
 ].toSorted())
 
 // Skin Center v1 exposed every shipped theme as a separate Cordis package.
@@ -196,6 +198,10 @@ export const BUILTIN_RUNTIME_PACKAGES = Object.freeze([
   '@tencent-connect/dsh-qqbot',
   '@ningbainb/dsh-chat-artifacts',
   '@ningbainb/dsh-user-scope',
+  // [fork] 二开新增插件：Project Context（V1.2 需求模块一）。
+  // 每新增一个 @xixi1314569/dsh-* 插件包都要在此登记（否则桌面 profile
+  // 不安装该包，runtime 解析不到 patch 行）。
+  '@xixi1314569/dsh-project-context',
   'dsh-better-sidebar',
   'reasoning-slider',
 ].toSorted())

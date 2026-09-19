@@ -61,4 +61,12 @@ git push -f origin develop   # rebase 后需要 force；develop 是我们独占�
 2. 遥测保持仓库默认关闭状态（`apps/dsh-desktop/build/telemetry-config.json`
    为 `{"endpoint":"","officialBuild":false}`），不要模仿上游 release workflow
    注入 `DSH_TELEMETRY_ENDPOINT`。
+3. `apps/dsh-desktop/src/profile.mjs`：
+   - `BUILTIN_RUNTIME_PACKAGES`（约 165 行）：含 `@xixi1314569/dsh-project-context`
+     等二开插件的登记行（标注 `[fork]` 注释）。**每新增一个 `@xixi1314569/dsh-*`
+     插件包都必须在此登记一行**——这是桌面 profile 依赖枚举的源头，漏了会导致
+     runtime 解析不到插件包。
+   - `AGGREGATED_BUNDLES`（约 66 行）：同名包也加了一行（迁移/去重用）。
+   - 同步要求：`packages/dsh-web-ui-all/aggregate.yml`（patchFrom + deps）
+     与 `scripts/feature-baseline.json` 各加条目，否则 feature-baseline 门禁失败。
 
